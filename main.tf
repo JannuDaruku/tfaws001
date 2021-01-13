@@ -1,3 +1,18 @@
+variable "key_name" {
+  default = ""
+}
+variable "volume_tags" {
+  default = ""
+}
+variable "volume_size" {
+  default = ""
+}
+variable "user_data" {
+  default = ""
+}
+variable "tags" {
+  default = ""
+}
 resource "aws_instance" "instance" {
   ami = "ami-0885b1f6bd170450c"
   instance_type = "t2.micro"
@@ -16,6 +31,18 @@ resource "aws_instance" "instance" {
   user_data = filebase64(var.user_data)
 }
 
+variable "sec_group_name" {
+  default = ""
+}
+variable "sec_group_description" {
+  default = ""
+}
+variable "port_list" {
+  default = ""
+}
+variable "ip_list" {
+  default = ""
+}
 resource "aws_security_group" "instance" {
   description = var.sec_group_description
   egress = [

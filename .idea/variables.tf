@@ -27,7 +27,7 @@ variable "sec_group_description" {
   default = "Webapp Security Group - allow 22, 80 and 8080"
 }
 variable "user_data" {
-  default = "./cloud-config.sh"
+  default = "cloud-config.sh"
 }
 
 variable "volume_size" {
